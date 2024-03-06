@@ -20,3 +20,5 @@ VALIDATE()
         echo "$2 is SUCCESS  $G manoj $N"
     fi 
 }
+
+VALIDATE 1 "manoj"
