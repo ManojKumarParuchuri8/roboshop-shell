@@ -15,10 +15,19 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is Failed  $R manoj $N"
+        echo -e "$2 is Failed"
     else 
-        echo "$2 is SUCCESS  $G manoj $N"
+        echo -e "$2 is SUCCESS"
     fi 
 }
 
-VALIDATE 1 "manoj"
+if [ $ID -ne 0 ] 
+ then 
+    echo -e " ERROR:: Please run this script with root access"
+    exit 1 #you can give other than 0
+else 
+    echo "you are root user"
+fi 
+ 
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE 
+VALIDATE $? "Copied MongoDB Repo"
