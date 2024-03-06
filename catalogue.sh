@@ -49,7 +49,6 @@ else
     echo -e "User is there we are $Y skipping $N"
 fi 
 
-VALIDATE $? "Creating Roboshop USER" 
 
 mkdir -p /app
 VALIDATE $? "Creating the App Directory"
