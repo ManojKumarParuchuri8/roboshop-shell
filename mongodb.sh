@@ -15,10 +15,8 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then 
-        echo "$2 is Failed"
+        echo -e "$2 is Failed  $R manoj $N"
     else 
-        echo "$2 is SUCCESS"
+        echo "$2 is SUCCESS  $G manoj $N"
     fi 
 }
-
-echo -e "$R Manoj $N  $Y Kumar $N"
