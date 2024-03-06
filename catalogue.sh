@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-MONGODB_HOST= mongodb.manojbhavani8.cloud
+MONGODB_HOST=mongodb.manojbhavani8.cloud
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
