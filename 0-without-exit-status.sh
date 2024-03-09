@@ -1,5 +1,5 @@
 #!/bin/bash 
-set -e 
+set -e
 echo "Hi manoj"
 ls -ltr 
 echo "Hi manoj"
