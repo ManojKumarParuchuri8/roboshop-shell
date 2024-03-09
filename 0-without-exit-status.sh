@@ -2,9 +2,8 @@
 set -e 
 echo "Hi manoj"
 ls -ltr 
-ls -la 
+echo "Hi manoj"
 echo "Before Wrong command"
 lssss
 echo "After Wrong command"
-cd /tmp 
-cd /home/centos
+echo "Manoj Kumar"
