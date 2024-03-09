@@ -41,7 +41,7 @@ VALIDATE $? "Enabling Remi Module"
 dnf install redis -y &>> $LOGFILE
 VALIDATE $? "Installing Redis"
 
-sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis.redis.conf  &>> $LOGFILE
+sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis/redis.conf  &>> $LOGFILE
 VALIDATE $? "Replacing the IP Address"
 
 systemctl enable redis &>> $LOGFILE
