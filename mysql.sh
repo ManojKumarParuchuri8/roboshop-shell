@@ -32,21 +32,20 @@ else
 fi 
 
 dnf module disable mysql -y &>> $LOGFILE 
-VALIDATION $? "Disabling MySQL"
+VALIDATE $? "Disabling MySQL"
 
 cp /home/centos/roboshop-shell/mysql.repo  /etc/yum.repos.d/mysql.repo &>> $LOGFILE 
-VALIDATION $? "Copying MySQL repo"
+VALIDATE $? "Copying MySQL repo"
 
 dnf install mysql-community-server -y &>> $LOGFILE 
-VALIDATION $? "Installing MySQL community server"
+VALIDATE $? "Installing MySQL community server"
 
 systemctl enable mysqld &>> $LOGFILE 
-VALIDATION $? "Enabling Mysql"
+VALIDATE $? "Enabling Mysql"
 
 systemctl start mysqld &>> $LOGFILE 
-VALIDATION $? "Starting Mysql"
+VALIDATE $? "Starting Mysql"
 
 mysql_secure_installation --set-root-pass RoboShop@1 &>> $LOGFILE 
-VALIDATION $? "Setting Mysql Root Password"
+VALIDATE $? "Setting Mysql Root Password"
 
-mysql -uroot -pRoboShop@1
