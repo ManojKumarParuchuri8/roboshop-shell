@@ -32,7 +32,7 @@ else
 fi 
 
 dnf install python36 gcc python3-devel -y &>> $LOGFILE 
-VALIDATION $? "Installing Python"
+VALIDATE $? "Installing Python"
 
 id roboshop 
 if [ $? -ne 0 ]
@@ -47,24 +47,24 @@ fi
 mkdir -p /app
 
 curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>> $LOGFILE
-VALIDATION $? "Downloading Payment Application"
+VALIDATE $? "Downloading Payment Application"
 
 cd /app 
 
 unzip -o /tmp/payment.zip  &>> $LOGFILE
-VALIDATION $? "Unzipping Payment Directory"
+VALIDATE $? "Unzipping Payment Directory"
 
 pip3.6 install -r requirements.txt  &>> $LOGFILE
-VALIDATION $? "Downloading Requirements"
+VALIDATE $? "Downloading Requirements"
 
 cp /home/centos/roboshop-shell/payment.service  /etc/systemd/system/payment.service &>> $LOGFILE
-VALIDATION $? "Copying Payment Service"
+VALIDATE $? "Copying Payment Service"
 
 systemctl daemon-reload &>> $LOGFILE
-VALIDATION $? "Daemon Reload"
+VALIDATE $? "Daemon Reload"
 
 systemctl enable payment  &>> $LOGFILE
-VALIDATION $? "Enabling Payment"
+VALIDATE $? "Enabling Payment"
 
 systemctl start payment &>> $LOGFILE
-VALIDATION $? "Starting payment"
+VALIDATE $? "Starting payment"
